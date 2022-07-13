@@ -6,7 +6,7 @@
 /*   By: lguan-xi <lguan-xi@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:47:05 by lguan-xi          #+#    #+#             */
-/*   Updated: 2022/07/07 14:26:28 by lguan-xi         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:54:39 by lguan-xi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i--;
 	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }

@@ -1,6 +1,7 @@
 SRC			= ft_strlen ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_toupper ft_tolower ft_atoi ft_bzero ft_strchr ft_strrchr ft_strncmp ft_memset ft_memcpy ft_memmove ft_strlcpy ft_strlcat ft_strnstr ft_memchr ft_memcmp ft_calloc ft_strdup ft_substr ft_strjoin ft_strcat ft_strtrim ft_split ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd
 
-B_SRC		= ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back
+B_SRC		= ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
+
 SRCS		= $(addsuffix .c, ${SRC})
 
 B_SRCS		= $(addsuffix .c, ${B_SRC})
@@ -27,8 +28,8 @@ $(NAME):	${OBJS}
 			${AR} ${NAME} ${OBJS}
 			${RN} ${NAME}
 
-bonus:		${B_OBJS}
-			${AR} ${NAME} ${B_OBJS}
+bonus:		${OBJS} ${B_OBJS}
+			${AR} ${NAME} ${OBJS} ${B_OBJS}
 			${RN} ${NAME}
 
 all:		$(NAME)
